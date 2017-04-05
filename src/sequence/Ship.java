@@ -3,8 +3,13 @@ package sequence;
 public class Ship {
 
 	public int shipIDNumber;
+	public int shipLocation;
 	
-	public Ship(int shipIDNumber) {
+	public Ship(int shipIDNumber, int shipLocation) {
+		
 		this.shipIDNumber = shipIDNumber;
+		this.shipLocation = shipLocation;
+		
 	}
+	
 }

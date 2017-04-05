@@ -1,42 +1,78 @@
 package sequence;
 
-import java.util.Random;
-
 public class Crane {
 	
 	public int craneIDNumber;
+	public int craneLocation;
 	
-	public Crane(int craneIDNumber) {
+	public Crane(int craneIDNumber, int craneLocation) {
+		
 		this.craneIDNumber = craneIDNumber;
+		this.craneLocation = craneLocation;
+		
 	}
 
 	public boolean validateOperator(Operator operator) {
 		
-		if (operator.operatorIDNumber == this.craneIDNumber) {
+		if (operator.validCranes.contains(this.craneIDNumber)) {
+			System.out.println("Operator " + operator.operatorIDNumber + " is validated for this crane.");
+			System.out.println("Crane " + this.craneIDNumber + " activated.");
 			return true;
 		}
 		
+		System.out.println("Operator " + operator.operatorIDNumber + " is not validated for this crane.");
 		return false;
+		
 	}
 
-	public void move(Warehouse warehouse) {
+	public String move(Warehouse warehouse) {
 		
-		Random random = new Random();
-		int countdown = random.nextInt(10);
-		
-		System.out.print("Moving Crane " + this.craneIDNumber + " to Warehouse " + warehouse.warehouseIDNumber + ".");
-		while (countdown > 0) {
-			System.out.print('.');
-			countdown--;
+		while (this.craneLocation != warehouse.warehouseLocation) {
+			
+			System.out.print(".");
+			
+			if (this.craneLocation > warehouse.warehouseLocation) {
+				this.craneLocation--;
+			}
+			else {
+				this.craneLocation++;
+			}
 		}
-		System.out.println("Done.");
-	}
-	
-	public void pickup() {
+		
+		return "Arrived.";
 		
 	}
 	
-	public void deliver() {
+	public String move(Ship ship, Container container) {
+		
+		while (this.craneLocation != ship.shipLocation) {
+			
+			System.out.print(".");
+			
+			if (this.craneLocation > ship.shipLocation) {
+				this.craneLocation--;
+				
+			}
+			else {
+				this.craneLocation++;
+			}
+			
+			container.containerLocation = this.craneLocation;
+		}
+		
+		return "Arrived.";
+		
+	}
+	
+	public String pickup(Container container) {
+		
+		return "Done.";
+		
+	}
+
+	public String deliver(Ship ship, Container container) {
+		
+		return "Done.";
 		
 	}
 	
