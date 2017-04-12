@@ -16,7 +16,7 @@ public class LoadContainer {
 //		Creates the Crane with an ID number and its current location.
 		Crane crane = new Crane(5, 2);
 //		Creates the Warehouse with an ID number and its current location.
-		Warehouse warehouse = new Warehouse(17, 5);
+		Warehouse warehouse = new Warehouse(17, 3);
 //		Creates the Container with an ID number and its current location.
 		Container container = new Container(845, 9);
 //		Creates the Ship with an ID number and its current location.
