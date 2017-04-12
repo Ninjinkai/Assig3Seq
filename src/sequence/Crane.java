@@ -66,13 +66,27 @@ public class Crane {
 	
 	public String pickup(Container container) {
 		
-		return "Done.";
+		while (this.craneLocation != container.containerLocation) {
+			
+			System.out.print(".");
+			
+			if (this.craneLocation > container.containerLocation) {
+				this.craneLocation--;
+				
+			}
+			else {
+				this.craneLocation++;
+			}
+			
+		}
+		
+		return container.pickup(this.craneLocation);
 		
 	}
 
 	public String deliver(Ship ship, Container container) {
 		
-		return "Done.";
+		return ship.receive(container);
 		
 	}
 	

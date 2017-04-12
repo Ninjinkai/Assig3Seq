@@ -12,4 +12,15 @@ public class Container {
 		
 	}
 	
+	public String pickup(int craneLocation) {
+		
+		if (this.containerLocation == craneLocation) {
+			return "Done.";
+		}
+		else {
+			return "Pick up failed.";
+		}
+		
+	}
+	
 }

@@ -12,4 +12,15 @@ public class Ship {
 		
 	}
 	
+	public String receive(Container container) {
+		
+		if (this.shipLocation == container.containerLocation) {
+			return "Done.";
+		}
+		else {
+			return "Loading failed.";
+		}
+		
+	}
+	
 }
