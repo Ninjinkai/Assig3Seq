@@ -15,12 +15,14 @@ public class Crane {
 	public boolean validateOperator(Operator operator) {
 		
 		if (operator.validCranes.contains(this.craneIDNumber)) {
-			System.out.println("Operator " + operator.operatorIDNumber + " is validated for this crane.");
+			System.out.println("Operator " + operator.operatorIDNumber +
+					" is validated for this crane.");
 			System.out.println("Crane " + this.craneIDNumber + " activated.");
 			return true;
 		}
 		
-		System.out.println("Operator " + operator.operatorIDNumber + " is not validated for this crane.");
+		System.out.println("Operator " + operator.operatorIDNumber +
+				" is not validated for this crane.");
 		return false;
 		
 	}

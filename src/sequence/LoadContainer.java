@@ -10,11 +10,12 @@ public class LoadContainer {
 //		Port objects have an ID and a location (except Operator).  For
 //		simplicity, the IDs are not unique.  The location is an integer
 //		that refers to some specific place in the port, similar to an ID.
+		
 //		Creates the Operator with an ID number followed by the ID numbers of
 //		cranes they can operate.
 		Operator operator = new Operator(8, 1, 2, 5, 6);
 //		Creates the Crane with an ID number and its current location.
-		Crane crane = new Crane(5, 2);
+		Crane crane = new Crane(4, 2);
 //		Creates the Warehouse with an ID number and its current location.
 		Warehouse warehouse = new Warehouse(17, 3);
 //		Creates the Container with an ID number and its current location.
